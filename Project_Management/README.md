@@ -1,0 +1,1 @@
+This directory stores all the documentation related to project management, including but not limited to Report, Snapshot and Sprint Retrospective.
