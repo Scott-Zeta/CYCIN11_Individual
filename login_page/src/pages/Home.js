@@ -1,4 +1,4 @@
-import { StyledTitle, StyledSubTitle, Avatar } from "../components/Styles";
+import { StyledTitle, StyledSubTitle, Avatar, StyledButton } from "../components/Styles";
 
 //logo
 import Logo from "../assets/logo.svg";

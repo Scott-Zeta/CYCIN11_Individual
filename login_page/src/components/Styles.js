@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 //background
 import background from './../assets/Background.jpg'
-
+//React router
+import { Link } from 'react-router-dom';
 //store all styled components
 
-export const colors ={
+export const colors = {
     primary: '#fff',
     theme: "#BE185D",
     light1: "#F3F4F6",
@@ -31,7 +32,7 @@ export const StyledContainer = styled.div`
 export const StyledTitle = styled.h2`
     font-size: ${(props) => props.size}px;
     text-align: center;
-    color: ${(props) => props.color ? props.color: colors.primary};
+    color: ${(props) => props.color ? props.color : colors.primary};
     padding : 5px;
     margin-bottom : 20px;
 `;
@@ -39,7 +40,7 @@ export const StyledTitle = styled.h2`
 export const StyledSubTitle = styled.p`
     font-size: ${(props) => props.size}px;
     text-align: center;
-    color: ${(props) => props.color ? props.color: colors.primary};
+    color: ${(props) => props.color ? props.color : colors.primary};
     padding : 5px;
     margin-bottom : 25px;
 `;
@@ -52,4 +53,23 @@ export const Avatar = styled.div`
     background-size: auto;
     background-position: center;
     margin: auto;
+`;
+
+export const StyledButton = styled(Link)`
+    padding: 10px;
+    width: 150px;
+    background-color: transparent;
+    font-size: 16px;
+    border: 3px solid ${colors.primary};
+    border-radius: 25px;
+    color: ${colors.primary};
+    text-decoration: none;
+    text-align: center;
+    transition: ease-in-out 0.3s;
+
+    &:hover{
+        background-color: ${colors.primary};
+        color: ${colors.theme};
+        cursor: pointer;
+    }
 `;
