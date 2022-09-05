@@ -43,3 +43,13 @@ export const StyledSubTitle = styled.p`
     padding : 5px;
     margin-bottom : 25px;
 `;
+
+export const Avatar = styled.div`
+    width: 85px;
+    height: 85px;
+    border-radius: 50px;
+    background: url(${props => props.image})
+    background-size: cover;
+    background-position: center;
+    margin: auto;
+`;
