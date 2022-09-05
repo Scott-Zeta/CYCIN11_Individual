@@ -24,6 +24,9 @@ const Home = () => {
             <StyledSubTitle size={27}>
                 Feel free to explore
             </StyledSubTitle>
+
+            <StyledButton to="/login">Login</StyledButton>
+            <StyledButton to="/singup">Signup</StyledButton>
         </div>
     );
 }

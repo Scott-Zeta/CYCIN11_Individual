@@ -1,13 +1,20 @@
 //pages components
 import Home from './pages/Home';
 //styled components
-import {StyledContainer} from './components/Styles';
+import { StyledContainer } from './components/Styles';
+
+import {
+  BrowserRouter as Router,
+  Switch, Route
+} from 'react-router-dom';
 
 function App() {
   return (
-    <StyledContainer>
-      <Home />
-    </StyledContainer>
+    <Router>
+      <StyledContainer>
+        <Home />
+      </StyledContainer>
+    </Router>
   );
 }
 
