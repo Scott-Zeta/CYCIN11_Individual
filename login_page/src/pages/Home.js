@@ -6,7 +6,16 @@ import Logo from "../assets/logo.svg";
 const Home = () => {
     return (
         <div>
-            <div>
+            <div style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                backgroundColor: "transparent",
+                width: "100%",
+                padding: "15px",
+                display: "flex",
+                justifyContent: "flex-start",
+            }}>
                 <Avatar image={Logo} />
             </div>
             <StyledTitle size={65}>
