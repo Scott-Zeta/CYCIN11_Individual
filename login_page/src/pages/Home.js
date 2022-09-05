@@ -1,4 +1,4 @@
-import { StyledTitle, StyledSubTitle, Avatar, StyledButton } from "../components/Styles";
+import { StyledTitle, StyledSubTitle, Avatar, StyledButton, ButtonGroup } from "../components/Styles";
 
 //logo
 import Logo from "../assets/logo.svg";
@@ -25,8 +25,10 @@ const Home = () => {
                 Feel free to explore
             </StyledSubTitle>
 
-            <StyledButton to="/login">Login</StyledButton>
-            <StyledButton to="/singup">Signup</StyledButton>
+            <ButtonGroup>
+                <StyledButton to="/login">Login</StyledButton>
+                <StyledButton to="/singup">Signup</StyledButton>
+            </ButtonGroup>
         </div>
     );
 }
