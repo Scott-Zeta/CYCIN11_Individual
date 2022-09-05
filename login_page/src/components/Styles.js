@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 //background
-import background from './../assets/background.jpg'
+import background from './../assets/Background.jpg'
 
 //store all styled components
 

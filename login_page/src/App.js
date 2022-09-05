@@ -1,8 +1,10 @@
+import {StyledContainer} from './components/Styles';
 
 function App() {
   return (
-    <div className="App">
-    </div>
+    <StyledContainer>
+      <p>TEST</p>
+    </StyledContainer>
   );
 }
 
