@@ -1,7 +1,7 @@
 import { StyledTitle, StyledSubTitle, Avatar } from "../components/Styles";
 
 //logo
-import Logo from "../assets/Logo.png";
+import Logo from "../assets/logo.svg";
 
 const Home = () => {
     return (

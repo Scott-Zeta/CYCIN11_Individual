@@ -45,11 +45,11 @@ export const StyledSubTitle = styled.p`
 `;
 
 export const Avatar = styled.div`
-    width: 85px;
-    height: 85px;
-    border-radius: 50px;
-    background: url(${props => props.image})
-    background-size: cover;
+    width: 100px;
+    height: 100px;
+    background: url(${props => props.image});
+    background-repeat: no-repeat;
+    background-size: auto;
     background-position: center;
     margin: auto;
 `;
