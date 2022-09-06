@@ -7,7 +7,7 @@ import { Formik, Form } from 'formik'
 import { TextInput } from '../components/FormLib';
 
 //icons
-import {FiMail, FiKey} from "react-icons/fi";
+import { FiMail, FiKey } from "react-icons/fi";
 
 const Login = () => {
     return (
@@ -17,24 +17,32 @@ const Login = () => {
                 <StyledTitle color={colors.theme} size={30}>
                     Member Login
                 </StyledTitle>
-                <Formik>
+                <Formik
+                    initialValues={{
+                        email: "",
+                        password: "",
+                    }}
+                    onSubmit={(values, { setSubmitting }) => {
+                        console.log(values);
+                    }}
+                >
                     {() => (
                         <Form>
-                            <TextInput 
-                                name = "email"
-                                type = "text"
-                                label = "Email Address"
-                                placeholder = "address@example.com"
-                                icon = {<FiMail/>}
+                            <TextInput
+                                name="email"
+                                type="text"
+                                label="Email Address"
+                                placeholder="address@example.com"
+                                icon={<FiMail />}
                             />
-                            <TextInput 
-                                name = "password"
-                                type = "password"
-                                label = "Password"
-                                icon = {<FiKey/>}
+                            <TextInput
+                                name="password"
+                                type="password"
+                                label="Password"
+                                icon={<FiKey />}
                             />
                             <ButtonGroup>
-                                <StyledFormButton type = "submit">
+                                <StyledFormButton type="submit">
                                     Login
                                 </StyledFormButton>
                             </ButtonGroup>
