@@ -5,6 +5,7 @@ import Logo from './../assets/logo.svg';
 //formik
 import { Formik, Form } from 'formik'
 import { TextInput } from '../components/FormLib';
+import * as Yup from 'yup';
 
 //icons
 import { FiMail, FiKey } from "react-icons/fi";
