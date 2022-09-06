@@ -1,10 +1,13 @@
-import { StyledTextInput, StyledFormArea, StyledFormButton, StyledLabel, Avatar, StyledTitle, colors } from './../components/Styles'
+import { StyledTextInput, StyledFormArea, StyledFormButton, StyledLabel, Avatar, StyledTitle, colors, ButtonGroup } from './../components/Styles'
 
 import Logo from './../assets/logo.svg';
 
 //formik
 import { Formik, Form } from 'formik'
 import { TextInput } from '../components/FormLib';
+
+//icons
+import {FiMail, FiKey} from "react-icons/fi";
 
 const Login = () => {
     return (
@@ -21,8 +24,20 @@ const Login = () => {
                                 name = "email"
                                 type = "text"
                                 label = "Email Address"
-                                placeholde = "address@example.com"
+                                placeholder = "address@example.com"
+                                icon = {<FiMail/>}
                             />
+                            <TextInput 
+                                name = "password"
+                                type = "password"
+                                label = "Password"
+                                icon = {<FiKey/>}
+                            />
+                            <ButtonGroup>
+                                <StyledFormButton type = "submit">
+                                    Login
+                                </StyledFormButton>
+                            </ButtonGroup>
                         </Form>
                     )}
                 </Formik>

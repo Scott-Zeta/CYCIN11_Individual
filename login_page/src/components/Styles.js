@@ -89,6 +89,7 @@ export const StyledTextInput = styled.input`
     letter-spacing: 1px;
     color: ${colors.light2};
     border: 0;
+    outline: 0;
     display: block;
     margin: 5px auto 10px auto;
     transition: ease-in-out 0.3s;
@@ -131,3 +132,13 @@ export const StyledFormButton = styled.button`
         cursor: pointer;
     }
 `;
+
+//Icons
+ export const StyledIcon = styled.p`
+    color: ${colors.dark1};
+    position: absolute;
+    font-size: 21px;
+    top: 35px;
+    ${(props) => props.right && `right: 15px; `}
+    ${(props) => !props.right && `left: 15px; `}
+ `;
