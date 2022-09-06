@@ -23,6 +23,19 @@ const Login = () => {
                         email: "",
                         password: "",
                     }}
+
+                    //validation
+                    validationSchema = {
+                        Yup.object({
+                            email: Yup.string().email("Invalid email address")
+                            .required("Required"),
+                            password: Yup.string()
+                            .min(8, "Too short password")
+                            .max(30, "Too long password")
+                            .required("Required"),
+                        })
+                    }
+
                     onSubmit={(values, { setSubmitting }) => {
                         console.log(values);
                     }}

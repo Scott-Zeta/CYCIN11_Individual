@@ -3,7 +3,8 @@ import { useField } from 'formik';
 import {
     StyledTextInput,
     StyledLabel,
-    StyledIcon
+    StyledIcon,
+    ErrorMsg
 } from "./../components/Styles";
 
 //password eye icon
@@ -36,12 +37,18 @@ export const TextInput = ({ icon, ...props }) => {
                 {icon}
             </StyledIcon>
             {
-                props.type === "password" &&
-                <StyledIcon onClick={() => setShow(!show)} right>
-                    {show && <FiEye />}
-                    {!show && <FiEyeOff />}
-                </StyledIcon>
-            }
+                props.type === "password" && (
+                    <StyledIcon onClick={() => setShow(!show)} right>
+                        {show && <FiEye />}
+                        {!show && <FiEyeOff />}
+                    </StyledIcon>
+                )}
+
+            {meta.touched && meta.error ? (
+                <ErrorMsg>{meta.error}</ErrorMsg>
+            ) : (
+                <ErrorMsg styled={{ visibility: "hidden" }}></ErrorMsg>
+            )}
         </div>
     )
 }
