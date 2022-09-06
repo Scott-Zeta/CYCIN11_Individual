@@ -150,6 +150,19 @@ export const ExtraText = styled.p`
     margin-top: 10px;
 `;
 
+//text link
+export const TextLink = styled(Link)`
+    text-decoration: none;
+    color: ${colors.theme};
+    transition: ease-in-out 0.3s;
+
+    &:hover {
+        text-decoration: underline;
+        letter-spacing: 2px;
+        font-weight: bold;
+    }
+`;
+
 //Icons
  export const StyledIcon = styled.p`
     color: ${colors.dark1};

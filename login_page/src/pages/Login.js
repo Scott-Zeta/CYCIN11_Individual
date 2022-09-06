@@ -1,4 +1,15 @@
-import { StyledTextInput, StyledFormArea, StyledFormButton, StyledLabel, Avatar, StyledTitle, colors, ButtonGroup } from './../components/Styles'
+import { 
+    StyledTextInput, 
+    StyledFormArea, 
+    StyledFormButton, 
+    StyledLabel, 
+    Avatar, 
+    StyledTitle, 
+    colors, 
+    ButtonGroup,
+    ExtraText,
+    TextLink 
+} from './../components/Styles'
 
 import Logo from './../assets/logo.svg';
 
@@ -63,6 +74,9 @@ const Login = () => {
                         </Form>
                     )}
                 </Formik>
+                <ExtraText>
+                    New here? <TextLink to="/signup">Signup</TextLink>
+                </ExtraText>
             </StyledFormArea>
         </div>
     )
