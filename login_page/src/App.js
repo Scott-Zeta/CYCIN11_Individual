@@ -2,19 +2,25 @@
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import Dashboard from './pages/Dashboard';
 //styled components
 import { StyledContainer } from './components/Styles';
 
 import {
   BrowserRouter as Router,
-  Switch, Route
+  Routes, Route
 } from 'react-router-dom';
 
 function App() {
   return (
     <Router>
       <StyledContainer>
-        <Signup />
+        <Routes>
+          <Route path='/login' element={<Login />}/>
+          <Route path='/signup' element={<Signup />}/>
+          <Route path='/dashboard' element = {<Dashboard />}/>
+          <Route path='/' element = {<Home />}/>
+        </Routes>
       </StyledContainer>
     </Router>
   );

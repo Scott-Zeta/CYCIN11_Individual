@@ -27,7 +27,7 @@ const Home = () => {
 
             <ButtonGroup>
                 <StyledButton to="/login">Login</StyledButton>
-                <StyledButton to="/singup">Signup</StyledButton>
+                <StyledButton to="/signup">Signup</StyledButton>
             </ButtonGroup>
         </div>
     );
