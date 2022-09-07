@@ -8,7 +8,8 @@ import {
     colors, 
     ButtonGroup,
     ExtraText,
-    TextLink 
+    TextLink,
+    CopyrightText 
 } from './../components/Styles'
 
 import Logo from './../assets/logo.svg';
@@ -78,6 +79,7 @@ const Login = () => {
                     New here? <TextLink to="/signup">Signup</TextLink>
                 </ExtraText>
             </StyledFormArea>
+            <CopyrightText>Copyright? No Copy at all</CopyrightText>
         </div>
     )
 }

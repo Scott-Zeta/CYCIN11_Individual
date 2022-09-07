@@ -145,7 +145,7 @@ export const ErrorMsg = styled.div`
 export const ExtraText = styled.p`
     font-size: ${(props) => props.size}px;
     text-align: center;
-    color: ${(props) => (props.color? props.color : colors.dark2)};
+    color: ${(props) => (props.color ? props.color : colors.dark2)};
     padding: 2px;
     margin-top: 10px;
 `;
@@ -164,11 +164,18 @@ export const TextLink = styled(Link)`
 `;
 
 //Icons
- export const StyledIcon = styled.p`
+export const StyledIcon = styled.p`
     color: ${colors.dark1};
     position: absolute;
     font-size: 21px;
     top: 35px;
     ${(props) => props.right && `right: 15px; `}
     ${(props) => !props.right && `left: 15px; `}
+ `;
+
+export const CopyrightText = styled.p`
+    padding : 5px;
+    margin: 20px;
+    text-align: center;
+    color: ${colors.light2};
  `;
