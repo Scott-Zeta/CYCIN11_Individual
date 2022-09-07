@@ -13,6 +13,7 @@ import {
 } from './../components/Styles'
 
 import Logo from './../assets/logo.svg';
+import {Oval} from 'react-loader-spinner';
 
 //formik
 import { Formik, Form } from 'formik'
@@ -50,7 +51,7 @@ const Login = () => {
                         console.log(values);
                     }}
                 >
-                    {() => (
+                    {({isSubmitting}) => (
                         <Form>
                             <TextInput
                                 name="email"
@@ -66,9 +67,17 @@ const Login = () => {
                                 icon={<FiKey />}
                             />
                             <ButtonGroup>
-                                <StyledFormButton type="submit">
+                                {!isSubmitting && <StyledFormButton type="submit">
                                     Login
-                                </StyledFormButton>
+                                </StyledFormButton>}
+
+                                {isSubmitting && (
+                                    <Oval
+                                        color = {colors.theme}
+                                        height = {50}
+                                        width = {50}
+                                    />
+                                )}
                             </ButtonGroup>
                         </Form>
                     )}

@@ -22,6 +22,8 @@ import * as Yup from 'yup';
 //icons
 import { FiMail, FiKey, FiUser, FiCalendar, FiLock } from "react-icons/fi";
 
+import {Oval} from 'react-loader-spinner';
+
 const Signup = () => {
     return (
         <div>
@@ -58,7 +60,7 @@ const Signup = () => {
                         console.log(values);
                     }}
                 >
-                    {() => (
+                    {({isSubmitting}) => (
                         <Form>
                             <TextInput
                                 name="name"
@@ -92,9 +94,17 @@ const Signup = () => {
                                 icon={<FiKey />}
                             />
                             <ButtonGroup>
-                                <StyledFormButton type="submit">
+                                {!isSubmitting && <StyledFormButton type="submit">
                                     Signup
-                                </StyledFormButton>
+                                </StyledFormButton>}
+
+                                {isSubmitting && (
+                                    <Oval
+                                        color = {colors.theme}
+                                        height = {50}
+                                        width = {50}
+                                    />
+                                )}
                             </ButtonGroup>
                         </Form>
                     )}
