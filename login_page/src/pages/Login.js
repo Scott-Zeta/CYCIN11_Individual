@@ -42,8 +42,6 @@ const Login = () => {
                             email: Yup.string().email("Invalid email address")
                             .required("Required"),
                             password: Yup.string()
-                            .min(8, "Too short password")
-                            .max(30, "Too long password")
                             .required("Required"),
                         })
                     }
