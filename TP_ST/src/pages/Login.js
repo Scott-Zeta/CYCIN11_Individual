@@ -1,19 +1,19 @@
-import { 
-    StyledTextInput, 
-    StyledFormArea, 
-    StyledFormButton, 
-    StyledLabel, 
-    Avatar, 
-    StyledTitle, 
-    colors, 
+import {
+    StyledTextInput,
+    StyledFormArea,
+    StyledFormButton,
+    StyledLabel,
+    Avatar,
+    StyledTitle,
+    colors,
     ButtonGroup,
     ExtraText,
     TextLink,
-    CopyrightText 
+    CopyrightText
 } from './../components/Styles'
 
 import Logo from './../assets/logo.svg';
-import {Oval} from 'react-loader-spinner';
+import { Oval } from 'react-loader-spinner';
 
 //formik
 import { Formik, Form } from 'formik'
@@ -23,7 +23,13 @@ import * as Yup from 'yup';
 //icons
 import { FiMail, FiKey } from "react-icons/fi";
 
-const Login = () => {
+//auth & redux
+import { connect } from 'react-redux';
+import { loginUser } from '../auth/actions/userActions';
+import { useNavigate } from "react-router-dom";
+
+const Login = ({ loginUser }) => {
+    const history = useNavigate();
     return (
         <div>
             <StyledFormArea>
@@ -38,20 +44,21 @@ const Login = () => {
                     }}
 
                     //validation
-                    validationSchema = {
+                    validationSchema={
                         Yup.object({
                             email: Yup.string().email("Invalid email address")
-                            .required("Required"),
+                                .required("Required"),
                             password: Yup.string()
-                            .required("Required"),
+                                .required("Required"),
                         })
                     }
 
-                    onSubmit={(values, { setSubmitting }) => {
+                    onSubmit={(values, { setSubmitting, setFiledError }) => {
                         console.log(values);
+                        loginUser(values, history, setFiledError, setSubmitting)
                     }}
                 >
-                    {({isSubmitting}) => (
+                    {({ isSubmitting }) => (
                         <Form>
                             <TextInput
                                 name="email"
@@ -73,9 +80,9 @@ const Login = () => {
 
                                 {isSubmitting && (
                                     <Oval
-                                        color = {colors.theme}
-                                        height = {50}
-                                        width = {50}
+                                        color={colors.theme}
+                                        height={50}
+                                        width={50}
                                     />
                                 )}
                             </ButtonGroup>
@@ -91,4 +98,4 @@ const Login = () => {
     )
 }
 
-export default Login;
+export default connect(null, { loginUser })(Login);

@@ -24,7 +24,13 @@ import { FiMail, FiKey, FiUser, FiCalendar, FiLock } from "react-icons/fi";
 
 import {Oval} from 'react-loader-spinner';
 
-const Signup = () => {
+//auth & redux
+import { connect } from 'react-redux';
+import { signupUser } from '../auth/actions/userActions';
+import { useNavigate } from "react-router-dom";
+
+const Signup = ({signupUser}) => {
+    const history = useNavigate();
     return (
         <div>
             <StyledFormArea>
@@ -56,8 +62,9 @@ const Signup = () => {
                         })
                     }
 
-                    onSubmit={(values, { setSubmitting }) => {
+                    onSubmit={(values, { setSubmitting,setFiledError }) => {
                         console.log(values);
+                        signupUser(values,history,setFiledError,setSubmitting)
                     }}
                 >
                     {({isSubmitting}) => (
@@ -118,4 +125,4 @@ const Signup = () => {
     )
 }
 
-export default Signup;
+export default connect(null,{signupUser})(Signup);

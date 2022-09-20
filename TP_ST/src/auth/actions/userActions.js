@@ -1,14 +1,11 @@
-import {legacy_createStore as createStore, applyMiddleware, compose} from 'redux';
-import thunk from 'redux-thunk';
-import rootReducer from './reducers/rootReducer';
+export const loginUser = (credentials, history,setFiledError,setSubmitting) => {
 
-import { sessionService } from 'redux-react-session';
+}
 
-const initialState = {};
-const middlewares = [thunk];
+export const signupUser = (credentials, history,setFiledError,setSubmitting) => {
 
-const store = createStore(rootReducer, initialState, compose(applyMiddleware(...middlewares)));
+}
 
-sessionService.initSessionService(store);
+export const logoutUser = () => {
 
-export default store;
+}
