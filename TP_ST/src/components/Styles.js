@@ -45,6 +45,15 @@ export const StyledSubTitle = styled.p`
     margin-bottom : 25px;
 `;
 
+export const StyledUserInfo = styled.p`
+    font-size: ${(props) => props.size}px;
+    text-align: center;
+    color: ${(props) => props.color ? props.color : colors.primary};
+    padding : 5px;
+    margin-bottom : 25px;
+    margin-top: 50px;
+`;
+
 export const Avatar = styled.div`
     width: 100px;
     height: 100px;
@@ -60,12 +69,13 @@ export const StyledButton = styled(Link)`
     width: 150px;
     background-color: transparent;
     font-size: 16px;
-    border: 3px solid ${colors.primary};
+    border: 3px solid ${(props) => props.border ? props.border : colors.primary};
     border-radius: 25px;
-    color: ${colors.primary};
+    color: ${(props) => props.color ? props.color : colors.primary};
     text-decoration: none;
     text-align: center;
     transition: ease-in-out 0.3s;
+     
 
     &:hover{
         background-color: ${colors.primary};
