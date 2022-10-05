@@ -40,27 +40,29 @@ const Dashboard = () => {
 
                 <Formik
                     initialValues={{
-                        email: "",
-                        password: "",
-                        repeatPassword:"",
-                        dateOfBirth: "",
-                        name:""
+                        name:"",
+                        mass:"",
+                        CDA_Seated:"",
+                        seat_height:"",
+                        init_p_t:"",
+                        cp:"",
+                        w:""
                     }}
 
                     //validation
-                    validationSchema = {
-                        Yup.object({
-                            email: Yup.string().email("Invalid email address")
-                            .required("Required"),
-                            password: Yup.string()
-                            .min(8, "Too short password")
-                            .max(30, "Too long password")
-                            .required("Required"),
-                            name: Yup.string().required("Required"),
-                            dateOfBirth: Yup.date().required("Required"),
-                            repeatPassword: Yup.string().required("Required").oneOf([Yup.ref("password"), null],"Password must be matched.")
-                        })
-                    }
+                    // validationSchema = {
+                    //     Yup.object({
+                    //         email: Yup.string().email("Invalid email address")
+                    //         .required("Required"),
+                    //         password: Yup.string()
+                    //         .min(8, "Too short password")
+                    //         .max(30, "Too long password")
+                    //         .required("Required"),
+                    //         name: Yup.string().required("Required"),
+                    //         dateOfBirth: Yup.date().required("Required"),
+                    //         repeatPassword: Yup.string().required("Required").oneOf([Yup.ref("password"), null],"Password must be matched.")
+                    //     })
+                    // }
 
                     onSubmit={(values, { setSubmitting,setFiledError }) => {
                         console.log(values);
@@ -72,46 +74,43 @@ const Dashboard = () => {
                             <TextInput
                                 name="name"
                                 type="text"
-                                label="Full Name"
+                                label="Name/ID"
                                 icon={<FiUser />}
                             />
                             <TextInput
-                                name="email"
-                                type="text"
-                                label="Email Address"
-                                placeholder="address@example.com"
-                                icon={<FiMail />}
+                                name="mass"
+                                type="number"
+                                label="Mass(KG)"
                             />
                             <TextInput
-                                name="dateOfBirth"
-                                type="date"
-                                label="Date of Birth"
-                                icon={<FiCalendar />}
+                                name="CDA_Seated"
+                                type="number"
+                                label="CDA Seated(m^2)"
                             />
                             <TextInput
-                                name="password"
-                                type="password"
-                                label="Password"
-                                icon={<FiLock />}
+                                name="seat_height"
+                                type="number"
+                                label="Seat Heigh(m)"
                             />
                             <TextInput
-                                name="repeatPassword"
-                                type="password"
-                                label="Repeat Password"
-                                icon={<FiKey />}
+                                name="init_p_t"
+                                type="number"
+                                label="Initial Power Turn(W)"
+                            />
+                            <TextInput
+                                name="cp"
+                                type="number"
+                                label="CP(W)"
+                            />
+                            <TextInput
+                                name="w"
+                                type="number"
+                                label="W'(J)"
                             />
                             <ButtonGroup>
-                                {!isSubmitting && <StyledFormButton type="submit">
+                                {<StyledFormButton type="submit">
                                     Signup
                                 </StyledFormButton>}
-
-                                {isSubmitting && (
-                                    <Oval
-                                        color = {colors.theme}
-                                        height = {50}
-                                        width = {50}
-                                    />
-                                )}
                             </ButtonGroup>
                         </Form>
                     )}
