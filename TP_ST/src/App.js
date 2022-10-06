@@ -5,8 +5,6 @@ import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
 
 // sub-pages in rider
-import RiderData from './pages/RiderData';
-import AddRider from './pages/AddRider';
 import RiderList from './pages/RiderList';
 
 //styled components
@@ -27,9 +25,6 @@ function App() {
           <Route path='/dashboard' element = {<Dashboard />}/>
           <Route path='/' element = {<Home />}/>
 
-          <Route path='/riderdata' element = {<RiderData />}/>
-          <Route path='/addrider' element = {<AddRider />}/>
-          <Route path='/riderlist' element = {<RiderList />}/>
         </Routes>
       </StyledContainer>
     </Router>

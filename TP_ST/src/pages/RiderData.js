@@ -1,21 +1,17 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 
-const RiderData = () => {
-  return (
-    <header>
-      <h1>Team Pursuit Strategy Tool</h1>
-      <hr />
-      <div className="links">
-        <NavLink to="/riderlist" className="link" activeclassname="active" exact>
-          Rider List
-        </NavLink>
-        <NavLink to="/addrider" className="link" activeclassname="active">
-          Add Rider
-        </NavLink>
-      </div>
-    </header>
-  );
-};
+const RiderData = ({rider}) =>{
+  return(
+    <tr>
+      <td>{rider.name}</td>     
+      <td>{rider.mass}</td>
+      <td>{rider.CDA_Seated}</td>
+      <td>{rider.seat_height}</td>
+      <td>{rider.init_p_t}</td>
+      <td>{rider.cp}</td>
+      <td>{rider.w}</td>
+    </tr>
+  )
+}
 
 export default RiderData;

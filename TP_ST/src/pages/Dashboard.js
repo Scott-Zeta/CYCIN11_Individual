@@ -15,6 +15,9 @@ import { useNavigate } from "react-router-dom";
 import Logo from "../assets/logo.svg";
 import { useState } from "react";
 
+//sub components
+import RiderList from "./RiderList";
+
 const Dashboard = () => {
     const [riderInfo, setInfo] = useState([]);
     const history = useNavigate();
@@ -75,7 +78,6 @@ const Dashboard = () => {
                                 name="name"
                                 type="text"
                                 label="Name/ID"
-                                icon={<FiUser />}
                             />
                             <TextInput
                                 name="mass"
@@ -115,6 +117,7 @@ const Dashboard = () => {
                         </Form>
                     )}
                 </Formik>
+                <RiderList riderInfo={riderInfo}/>
             </StyledFormArea>
         </div>
     );
