@@ -7,15 +7,16 @@ import * as Yup from 'yup';
 
 //icon and button
 import { FiMail, FiKey, FiUser, FiCalendar, FiLock } from "react-icons/fi";
-import { Oval } from 'react-loader-spinner';
 
 import { signupUser } from '../auth/actions/userActions';
 import { useNavigate } from "react-router-dom";
 
 //logo
 import Logo from "../assets/logo.svg";
+import { useState } from "react";
 
 const Dashboard = () => {
+    const [riderInfo, setInfo] = useState([]);
     const history = useNavigate();
     return (
         <div>
@@ -62,12 +63,13 @@ const Dashboard = () => {
                         })
                     }
 
-                    onSubmit={(values, { setSubmitting, setFiledError }) => {
+                    onSubmit={(values) => {
                         console.log(values);
-                        signupUser(values, history, setFiledError, setSubmitting)
+                        setInfo(riderInfo.concat(values));
+                        console.log(riderInfo);
                     }}
                 >
-                    {({ isSubmitting }) => (
+                    {() => (
                         <Form>
                             <TextInput
                                 name="name"
