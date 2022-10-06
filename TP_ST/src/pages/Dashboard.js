@@ -8,7 +8,6 @@ import * as Yup from 'yup';
 //icon and button
 import { FiMail, FiKey, FiUser, FiCalendar, FiLock } from "react-icons/fi";
 
-import { signupUser } from '../auth/actions/userActions';
 import { useNavigate } from "react-router-dom";
 
 //logo

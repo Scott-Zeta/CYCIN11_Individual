@@ -6,6 +6,7 @@ const RiderList = ({ riderInfo }) => {
     <div>
       <h2>Team Members</h2>
       <table style={{ border:"1px solid black"}}>
+        <thead>
         <tr>
           <th style={{ border:"1px solid black", padding: "5px"}}> Name/ID </th>
           <th style={{ border:"1px solid black", padding: "5px"}}>Mass(KG)</th>
@@ -15,6 +16,7 @@ const RiderList = ({ riderInfo }) => {
           <th style={{ border:"1px solid black", padding: "5px"}}>CP(W)</th>
           <th style={{ border:"1px solid black", padding: "5px"}}>W'(J)</th>
         </tr>
+        </thead>
         {riderInfo.map((p, i) => <RiderData key={i} rider={p} />)}
       </table>
     </div>
