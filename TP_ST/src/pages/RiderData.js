@@ -2,6 +2,7 @@ import React from 'react';
 
 const RiderData = ({rider}) =>{
   return(
+    <tbody>
     <tr>
       <td>{rider.name}</td>     
       <td>{rider.mass}</td>
@@ -11,6 +12,7 @@ const RiderData = ({rider}) =>{
       <td>{rider.cp}</td>
       <td>{rider.w}</td>
     </tr>
+    </tbody>
   )
 }
 
