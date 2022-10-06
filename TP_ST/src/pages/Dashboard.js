@@ -7,7 +7,7 @@ import * as Yup from 'yup';
 
 //icon and button
 import { FiMail, FiKey, FiUser, FiCalendar, FiLock } from "react-icons/fi";
-import {Oval} from 'react-loader-spinner';
+import { Oval } from 'react-loader-spinner';
 
 import { signupUser } from '../auth/actions/userActions';
 import { useNavigate } from "react-router-dom";
@@ -34,42 +34,40 @@ const Dashboard = () => {
 
             <StyledFormArea bg={colors.light2}>
                 <StyledUserInfo size={50} color={colors.dark2}>
-                    Welcome, User      
+                    Welcome, User
                     <StyledButton to="#" color={colors.theme} border={colors.dark3}>Logout</StyledButton>
                 </StyledUserInfo>
 
                 <Formik
                     initialValues={{
-                        name:"",
-                        mass:"",
-                        CDA_Seated:"",
-                        seat_height:"",
-                        init_p_t:"",
-                        cp:"",
-                        w:""
+                        name: "",
+                        mass: "",
+                        CDA_Seated: "",
+                        seat_height: "",
+                        init_p_t: "",
+                        cp: "",
+                        w: ""
                     }}
 
                     //validation
-                    // validationSchema = {
-                    //     Yup.object({
-                    //         email: Yup.string().email("Invalid email address")
-                    //         .required("Required"),
-                    //         password: Yup.string()
-                    //         .min(8, "Too short password")
-                    //         .max(30, "Too long password")
-                    //         .required("Required"),
-                    //         name: Yup.string().required("Required"),
-                    //         dateOfBirth: Yup.date().required("Required"),
-                    //         repeatPassword: Yup.string().required("Required").oneOf([Yup.ref("password"), null],"Password must be matched.")
-                    //     })
-                    // }
+                    validationSchema={
+                        Yup.object({
+                            name: Yup.string().required("Required"),
+                            mass: Yup.number().positive("Must be positive!").required("Required"),
+                            CDA_Seated: Yup.number().positive("Must be positive!").required("Required"),
+                            seat_height: Yup.number().positive("Must be positive!").required("Required"),
+                            init_p_t: Yup.number().positive("Must be positive!").required("Required"),
+                            cp: Yup.number().positive("Must be positive!").required("Required"),
+                            w: Yup.number().positive("Must be positive!").required("Required")
+                        })
+                    }
 
-                    onSubmit={(values, { setSubmitting,setFiledError }) => {
+                    onSubmit={(values, { setSubmitting, setFiledError }) => {
                         console.log(values);
-                        signupUser(values,history,setFiledError,setSubmitting)
+                        signupUser(values, history, setFiledError, setSubmitting)
                     }}
                 >
-                    {({isSubmitting}) => (
+                    {({ isSubmitting }) => (
                         <Form>
                             <TextInput
                                 name="name"
@@ -109,7 +107,7 @@ const Dashboard = () => {
                             />
                             <ButtonGroup>
                                 {<StyledFormButton type="submit">
-                                    Signup
+                                    Save Profile
                                 </StyledFormButton>}
                             </ButtonGroup>
                         </Form>
