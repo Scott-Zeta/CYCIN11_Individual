@@ -1,11 +1,15 @@
 {
   "name": "login_server",
   "version": "1.0.0",
-  "description": "Backend of login system",
+  "description": "Backend for a login system",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Scott Zeta",
-  "license": "ISC"
+  "author": "Scott-Zeta",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "mongoose": "^6.6.5"
+  }
 }
