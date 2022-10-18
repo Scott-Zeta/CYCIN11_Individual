@@ -8,6 +8,8 @@ const port = 3000;
 const bodyParser = require('express').json;
 app.use(bodyParser());
 
+app.use('/user', userRouter)
+
 app.listen(port, () => {
     console.log(`server running on port ${port}`);
 })
