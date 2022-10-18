@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router()
 
+//mongodb user model
+const User = require('./../models/User');
+
 //signup
 router.post('/signup', (req,res) =>{
     let {name, email, password, dateofBirth} = req.body;
@@ -37,7 +40,24 @@ router.post('/signup', (req,res) =>{
         })
     } else {
         //check if user already exists
-        
+        User.find({email}).then(result =>{
+            if(result.length){
+                //user already exists
+                res.json({
+                    status: "FAILED",
+                    message: "User with the provide email already exists"
+                })
+            }else{
+                //try create new user
+                
+            }
+        }).catch(err => {
+            console.log(err);
+            res.json({
+                status: "FAILED",
+                message: "error occurred while checking for existing user"
+            })
+        })
     }
 })
 
