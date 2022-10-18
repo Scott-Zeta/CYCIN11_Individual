@@ -5,7 +5,7 @@
 /.pnp
 .pnp.js
 /login_server/node_modules
-/login_server/.env
+/login_server/*.env
 
 # testing
 /coverage
