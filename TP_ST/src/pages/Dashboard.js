@@ -17,6 +17,10 @@ import { useState } from "react";
 //sub components
 import RiderList from "./RiderList";
 
+//authetic & redux
+import {connect} from 'react-redux';
+import { logoutUser } from "../auth/actions/userActions";
+
 const Dashboard = () => {
     const [riderInfo, setInfo] = useState([]);
     const history = useNavigate();
@@ -122,4 +126,4 @@ const Dashboard = () => {
     );
 }
 
-export default Dashboard;
+export default connect(null,{logoutUser}) (Dashboard);
