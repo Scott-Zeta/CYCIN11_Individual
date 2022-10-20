@@ -53,9 +53,9 @@ const Login = ({ loginUser }) => {
                         })
                     }
 
-                    onSubmit={(values, { setSubmitting, setFiledError }) => {
+                    onSubmit={(values, { setSubmitting, setFieldError }) => {
                         console.log(values);
-                        loginUser(values, history, setFiledError, setSubmitting)
+                        loginUser(values, history, setFieldError, setSubmitting)
                     }}
                 >
                     {({ isSubmitting }) => (
