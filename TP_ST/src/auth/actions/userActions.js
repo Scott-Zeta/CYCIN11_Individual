@@ -86,7 +86,7 @@ export const logoutUser = (history) => {
     return () => {
         sessionService.deleteSession();
         sessionService.deleteUser();
-        history("/");
+        history("/login");
         console.log("logout excuted")
     }
 }

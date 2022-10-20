@@ -21,7 +21,7 @@ import RiderList from "./RiderList";
 import {connect} from 'react-redux';
 import { logoutUser } from "../auth/actions/userActions";
 
-const Dashboard = ({logoutUser}) => {
+const Dashboard = ({logoutUser,user}) => {
     const [riderInfo, setInfo] = useState([]);
     const history = useNavigate();
     return (
@@ -41,7 +41,7 @@ const Dashboard = ({logoutUser}) => {
 
             <StyledFormArea bg={colors.light2}>
                 <StyledUserInfo size={50} color={colors.dark2}>
-                    Welcome, User
+                    Welcome, {user.name}
                     <StyledButton to="#" color={colors.theme} border={colors.dark3} onClick={() => logoutUser(history)}>Logout</StyledButton>
                 </StyledUserInfo>
 
@@ -126,4 +126,8 @@ const Dashboard = ({logoutUser}) => {
     );
 }
 
-export default connect(null,{logoutUser}) (Dashboard);
+const mapStateToProps = ({session}) => ({
+    user: session.user
+})
+
+export default connect(mapStateToProps,{logoutUser}) (Dashboard);
