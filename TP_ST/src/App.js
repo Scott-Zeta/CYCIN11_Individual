@@ -15,6 +15,11 @@ import {
   Routes, Route
 } from 'react-router-dom';
 
+//authetic
+import { connect } from 'react-redux';
+import AuthRoute from './components/AuthRoute';
+import BasicRoute from './components/BasicRoute';
+
 function App() {
   return (
     <Router>
@@ -31,4 +36,4 @@ function App() {
   );
 }
 
-export default App;
+export default connect()(App);
