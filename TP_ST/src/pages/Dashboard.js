@@ -21,7 +21,7 @@ import RiderList from "./RiderList";
 import {connect} from 'react-redux';
 import { logoutUser } from "../auth/actions/userActions";
 
-const Dashboard = () => {
+const Dashboard = ({logoutUser}) => {
     const [riderInfo, setInfo] = useState([]);
     const history = useNavigate();
     return (
@@ -42,7 +42,7 @@ const Dashboard = () => {
             <StyledFormArea bg={colors.light2}>
                 <StyledUserInfo size={50} color={colors.dark2}>
                     Welcome, User
-                    <StyledButton to="#" color={colors.theme} border={colors.dark3}>Logout</StyledButton>
+                    <StyledButton to="#" color={colors.theme} border={colors.dark3} onClick={() => logoutUser(history)}>Logout</StyledButton>
                 </StyledUserInfo>
 
                 <Formik

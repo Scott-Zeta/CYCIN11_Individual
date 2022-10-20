@@ -82,8 +82,11 @@ export const signupUser = (credentials, history, setFieldError, setSubmitting) =
     }
 }
 
-export const logoutUser = () => {
-    return() => {
-        
+export const logoutUser = (history) => {
+    return () => {
+        sessionService.deleteSession();
+        sessionService.deleteUser();
+        history("/");
+        console.log("logout excuted")
     }
 }
